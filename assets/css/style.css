@@ -109,3 +109,70 @@ body{
 .menu span i{
     padding-right: 10px;
 }
+
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+}
+
+.popup-box .popup{
+    position: absolute; 
+    max-width: 400px; 
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.popup-box .popup .content{      
+    background: white;
+    border-radius: 5px;
+}
+.content header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    border-bottom: 2px solid #ccc;
+}
+.content header p{
+    font-weight: 600;
+    font-size: 18px;
+}
+.content header i{
+    cursor: pointer;
+    color: #ccc;
+    font-size: 20px;
+}
+.content form{
+    padding: 10px 15px 30px;
+}
+.row label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.row input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    padding: 0 15px;
+}
+.row textarea{
+    height: 150px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    padding: 10px 15px;
+    resize: none;
+}

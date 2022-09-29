@@ -77,3 +77,28 @@ body{
     color: #668284;
     font-size: 14px;
 }
+.settings{
+    position: relative;
+    color: #ccc;
+    
+}
+.menu{
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 5px; 
+    position: absolute;
+    bottom: 0;
+    right: 10px;  
+}
+.menu span{
+    display: block;
+    padding: 15px 20px;
+    width: 120px;
+    cursor: pointer; 
+}
+.menu span:hover{
+    background: #ccc;
+}
+.menu span i{
+    padding-right: 10px;
+}

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Nunito', sans-serif ;
+    background: #88ABFF;
+}
+
+.wrapper{
+    margin: 200px;    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 20px;
+}
+
+.wrapper li{
+    background: white;
+    list-style: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    height: 250px;
+}
+
+.add-box{
+    cursor: pointer;
+}
+.add-box, .icon{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.add-box .icon{
+    border: 2px dashed #007ACC;
+    width: 70px;
+    height: 70px;
+    color: #007ACC;
+    font-weight: 600;
+    font-size: 1.5em;
+    border-radius: 50%;
+}
+.add-box p{
+    color: #007ACC;
+    font-weight: 500;
+    margin-top: 25px;
+    font-size: 1.4em;
+}
+
+.note{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.note p{
+    font-size: 22px;
+    font-weight: 500;
+}
+.note .details span{
+    display: block;
+    margin-top: 15px;
+    color: #575757;
+    font-size: 15px;
+}
+
+.note .bottom-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+}
+.note .bottom-content span{
+    color: #668284;
+    font-size: 14px;
+}

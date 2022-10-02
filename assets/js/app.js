@@ -13,6 +13,8 @@ let notes = JSON.parse(localStorage.getItem('notes') || '[]');
 
 addBox.addEventListener('click',()=>{
     popupBox.classList.add('show');
+    noteTitle.value = '';
+    noteDesc.value = '';
 })
 closeIcon.addEventListener('click',()=>{
     popupBox.classList.remove('show');
@@ -21,7 +23,7 @@ closeIcon.addEventListener('click',()=>{
 function showNotes(){
     document.querySelectorAll('.note').forEach(note=>note.remove());
     
-    notes.forEach((note)=>{
+    notes.forEach((note,id)=>{
         let li = `<li class="note">
         <div class="details">
         <p>${note.title}</p>
@@ -33,7 +35,7 @@ function showNotes(){
           <i  onclick="showMenu(this)" class="fa-solid fa-ellipsis"></i>
           <div class="menu">
             <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
-            <span><i class="fa-solid fa-trash"></i>Delete</span>
+            <span onclick="deleteNote(${id})"><i class="fa-solid fa-trash"></i>Delete</span>
           </div>
         </div>
       </div>
@@ -69,3 +71,10 @@ addBtn.addEventListener('click',()=>{
     }    
 })
 showNotes();
+
+function deleteNote(any){
+    notes.splice(any,1);
+    localStorage.setItem('notes', JSON.stringify(notes));
+    showNotes();
+    // console.log(notes[any]);
+}

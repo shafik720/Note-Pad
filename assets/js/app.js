@@ -19,6 +19,7 @@ addBox.addEventListener('click',()=>{
     popUpTitle.innerText = 'Add a New Note';
     addBtn.innerText = 'Add Note'
 })
+
 closeIcon.addEventListener('click',()=>{
     popupBox.classList.remove('show');
     isUpdate = false;
@@ -57,7 +58,8 @@ function showMenu(any){
     })
 }
 
-addBtn.addEventListener('click',()=>{
+addBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
     if(noteTitle.value || noteDesc.value){
         let dateObj = new Date;
         let day = dateObj.getDate();

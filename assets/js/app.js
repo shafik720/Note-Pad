@@ -4,7 +4,8 @@ popupBox = document.querySelector('.popup-box'),
 closeIcon = popupBox.querySelector('header i'),
 addBtn = popupBox.querySelector('.addBtn'),
 noteTitle = popupBox.querySelector('.row input'),
-noteDesc = popupBox.querySelector('.row textarea')
+noteDesc = popupBox.querySelector('.row textarea'),
+popUpTitle = document.getElementById('popTitle');
 ;
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -15,6 +16,8 @@ addBox.addEventListener('click',()=>{
     popupBox.classList.add('show');
     noteTitle.value = '';
     noteDesc.value = '';
+    popUpTitle.innerText = 'Add a New Note';
+    addBtn.innerText = 'Add Note'
 })
 closeIcon.addEventListener('click',()=>{
     popupBox.classList.remove('show');
@@ -34,7 +37,7 @@ function showNotes(){
         <div class="settings">
           <i  onclick="showMenu(this)" class="fa-solid fa-ellipsis"></i>
           <div class="menu">
-            <span><i class="fa-regular fa-pen-to-square"></i>Edit</span>
+            <span onclick="updateNote(${id}), '${note.title}', '${note.description}' "><i class="fa-regular fa-pen-to-square"></i>Edit</span>
             <span onclick="deleteNote(${id})"><i class="fa-solid fa-trash"></i>Delete</span>
           </div>
         </div>
@@ -77,4 +80,10 @@ function deleteNote(any){
     localStorage.setItem('notes', JSON.stringify(notes));
     showNotes();
     // console.log(notes[any]);
+}
+
+function updateNote(noteId, title, description){
+    addBox.click();
+    popUpTitle.innerText = 'Edit Your Note';
+    addBtn.innerText = 'Update'
 }

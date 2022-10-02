@@ -29,17 +29,18 @@ function showNotes(){
     document.querySelectorAll('.note').forEach(note=>note.remove());
     
     notes.forEach((note,id)=>{
+        let filterDesc = note.description.replaceAll('\n','<br/>')
         let li = `<li class="note">
         <div class="details">
         <p>${note.title}</p>
-        <span>${note.description}</span>
+        <span>${filterDesc}</span>
       </div>
       <div class="bottom-content">
         <span>${note.date}</span>
         <div class="settings">
           <i  onclick="showMenu(this)" class="fa-solid fa-ellipsis"></i>
           <div class="menu">
-            <span onclick="updateNote(${id}, '${note.title}', '${note.description}' )"><i class="fa-regular fa-pen-to-square"></i>Edit</span>
+            <span onclick="updateNote(${id}, '${note.title}', '${filterDesc}' )"><i class="fa-regular fa-pen-to-square"></i>Edit</span>
             <span onclick="deleteNote(${id})"><i class="fa-solid fa-trash"></i>Delete</span>
           </div>
         </div>
@@ -93,6 +94,7 @@ function deleteNote(any){
 }
 
 function updateNote(noteId, title, description){
+    let filterDes = description.replaceAll('<br/>', '\r\n');
     updateId = noteId;
     isUpdate = true;
     addBox.click();
@@ -100,5 +102,5 @@ function updateNote(noteId, title, description){
     addBtn.innerText = 'Update';
     
     noteTitle.value = title;
-    noteDesc.value = description;
+    noteDesc.value = filterDes;
 }

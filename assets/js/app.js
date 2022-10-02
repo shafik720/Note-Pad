@@ -83,8 +83,11 @@ addBtn.addEventListener('click',(e)=>{
 showNotes();
 
 function deleteNote(any){
-    notes.splice(any,1);
-    localStorage.setItem('notes', JSON.stringify(notes));
+    let confirmDelete = confirm('You Sure you want to delete this note ?');
+    if(confirmDelete){
+        notes.splice(any,1);
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }    
     showNotes();
     // console.log(notes[any]);
 }
